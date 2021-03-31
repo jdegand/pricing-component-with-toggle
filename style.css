@@ -1,0 +1,273 @@
+:root {
+  --linearGradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+  --veryLightGrayishBlue: hsl(240, 78%, 98%);
+  --lightGrayishBlue: hsl(234, 14%, 74%);
+  --grayishBlue: hsl(233, 13%, 49%);
+  --darkGrayishBlue: hsl(232, 13%, 33%);
+  --startPurple: hsl(236, 72%, 79%);
+  --finishPurple: hsl(237, 63%, 64%);
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.not-hidden {
+  display: flex;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  background: url(images/bg-top.svg);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+}
+
+.toggle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 40px 1fr;
+  margin: 25px 100px;
+  text-align: left;
+  position: relative;
+}
+
+
+#checkbox {
+  display: none;
+  width: 0;
+}
+
+.label {
+  position: relative;
+  display: inline-block;
+  border-radius: 50px;
+  margin-left: -625px;
+  width: 50px;
+  height: 26px;
+  background: var(--startPurple);
+  cursor: pointer;
+}
+
+label:nth-of-type(1){
+  margin-left: 480px;
+}
+
+label:nth-of-type(3) {
+  margin-left: -550px;
+}
+
+.term {
+  font-size: 15px;
+  color: var(--lightGrayishBlue);
+}
+
+
+.ball {
+  background: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  transition: transform 0.15s linear;
+}
+
+#checkbox:checked ~ .label  {
+  background-color: var(--finishPurple);
+}
+
+#checkbox:checked ~ .label .ball {
+  transform: translateX(25px);
+}
+
+#checkbox:checked ~ .cards-container .card .not-hidden {
+  display: none;
+}
+
+#checkbox:checked ~ .cards-container .card .hidden {
+  display: block;
+}
+
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 400px;
+  height: 400px;
+  line-height: 2;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2), -5px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.price {
+  font-size: 48px;
+}
+
+.middle-card {
+  height: 450px;
+  width: 400px;
+  background-color: var(--startPurple);
+  color: white;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:last-of-type {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  font-family: inherit;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  margin-top: 10px;
+  border: 1px solid var(--finishPurple);
+  width: 200px;
+  color: white;
+}
+
+
+button:hover {
+  background: transparent;
+  color: black;
+}
+
+.middle-btn {
+  background: white;
+  color: black;
+}
+
+.middle-btn:hover {
+  color: white;
+}
+
+.bg-bottom {
+  background: url(images/bg-bottom.svg);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 400px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@media (max-width: 1000px) {
+
+
+  * {
+    font-size: 15px;
+  }
+
+  body {
+    background: url(images/bg-top.svg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 100px;
+  }
+
+  h1 {
+    padding: 50px 0;
+  }
+
+  .toggle {
+    margin: 0;
+    padding: 0;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .card {
+    width: 300px;
+    height: 300px;
+    line-height: 1.2;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .middle-card {
+    height: 300px;
+    width: 300px;
+    padding: 0;
+  }
+
+  button {
+    width: 200px;
+    padding: 10px;
+  }
+
+
+  label:nth-of-type(1){
+    margin-left: 90px;
+  }
+
+  label:nth-of-type(3) {
+    margin-left: -130px;
+  }
+
+  .bg-bottom {
+    height: 200px;
+  }
+
+  .label {
+    position: relative;
+    display: inline-block;
+    border-radius: 50px;
+    margin-left: -175px;
+    width: 50px;
+    height: 26px;
+    background: var(--startPurple);
+    cursor: pointer;
+  }
+
+  .bg-bottom {
+    background: none;
+    display: none;
+  }
+
+  li {
+    margin-bottom: 20px;
+  }
+
+}
