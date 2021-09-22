@@ -59,4 +59,4 @@ Users should be able to:
 ### Useful resources
 
 - [love2dev](https://love2dev.com/blog/html-checkbox/) - Checkbox
-- [W3 Docs](https://www.w3docs.com/snippets/css/how-to-style-the-selected-label-of-a-radio-button.html)
+- [W3 Docs](https://www.w3docs.com/snippets/css/how-to-style-the-selected-label-of-a-radio-button.html) - Style label of radio button
